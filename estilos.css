@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+    --padding-container: 100px 0;
+    --color-title: #001A49;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+.hero{
+   width: 100%;
+   height: 100vh;
+   min-height: 600px;
+   max-height: 800px;
+   position: relative;
+   display: grid;
+   grid-template-rows: 100px lfr; 
+   color: #fff;
+}
+
+.hero::before{
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#0000008c 0%, #0000008c 100%), url('../Img/BCP-Colegio_02-Nuevo-Imperial.jpg');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+}
+
+ /* Nav */
+
+.nav{
+    --padding-container:0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav__title{
+    font-weight: 300;
+}
+
+li {
+    list-style: none;
+}
+
+.nav__link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav__menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav__img{
+    display: block;
+    width: 30px;
+}
+
+.nav__close{
+    display: var(--show, none);
+}
+
+/* Hero container */
+
+.hero__container{
+    max-width: 800px;
+    --padding-container:0;
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 3rem;
+}
+
+.cta{
+    display: inline-block;
+    background-color: #2091F9;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+/* About */
+
+.about{
+    text-align: center;
+}
+
+.subtitle{
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.about__paragraph{
+    line-height: 1.7;
+}
+
+.about__main{
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.about__icons{
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.about__icon{
+    width: 40px;
+}
+
+/* Knowledge */
+
+.knowledge{
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+    overflow: hidden;
+}
+
+.knowledge__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Corregido: Cambiar "lfr" a "1fr" */
+    gap: 1em;
+    align-items: center;
+}
+
+.knowledge__picture{
+    max-width: 500px;
+}
+
+.knowledge__paragraph {
+    line-height: 1.7;
+    margin-bottom: 0px;
+}
+
+
+.knowledge__img{
+    width: 100%;
+    display: block;
+}
+/* Estilos para la galería de imágenes */
+.gallery {
+    display: flex; /* Convierte el elemento en un contenedor flexible */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en múltiples líneas */
+    gap: 10px; /* Espacio entre las imágenes */
+    justify-content: center; /* Centra horizontalmente las imágenes */
+}
+
+.gallery__item {
+    flex: 1;
+    max-width: calc(25% - 10px); /* Ancho máximo de cada elemento, con margen incluido */
+    box-sizing: border-box; /* Asegura que el margen no afecte el ancho total */
+    margin: 5px; /* Espacio alrededor de cada elemento */
+}
+
+.gallery__img {
+    width: 90%; /* Ancho del 90% del elemento padre */
+    height: 90%; /* Altura del 90% del elemento padre (para mantener la proporción original) */
+    border-radius: 5px; /* Borde redondeado en las imágenes */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre las imágenes */
+}
+
+.lightbox-button {
+    background-color: #21d83c; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado en los botones */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    margin: 10px; /* Margen alrededor de los botones */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre los botones */
+    display: none; /* Inicialmente, oculta los botones */
+}
+
+/* Estilos para el lightbox */
+#contenedor-principal {
+    display: none; /* Inicialmente, oculta el lightbox */
+    position: fixed; /* Coloca el lightbox en una posición fija en la ventana */
+    top: 0; /* Coloca el lightbox en la parte superior de la ventana */
+    left: 0; /* Coloca el lightbox en el lado izquierdo de la ventana */
+    width: 100%; /* Establece el ancho del lightbox al 100% del ancho de la ventana */
+    height: 100%; /* Establece la altura del lightbox al 100% de la altura de la ventana */
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+#contenedor-interno {
+    background-color: white; /* Fondo del contenedor interno del lightbox */
+    padding: 20px; /* Espaciado interno del contenedor interno */
+    border-radius: 5px; /* Borde redondeado del contenedor interno */
+    max-width: 80%; /* Ancho máximo del lightbox */
+    max-height: 80%; /* Altura máxima del lightbox */
+    overflow: auto; /* Habilita la barra de desplazamiento si el contenido es demasiado grande */
+}
+
+
+/* animacion de escritura */
+
+.contenedor-texto .titulo {
+    font-size: 20px; /* Tamaño de fuente del título */
+    font-weight: normal; /* Grosor de la fuente normal */
+    margin-bottom: 2px; /* Margen inferior del título */
+}
+
+/* Estilos para elementos con la clase "informe" dentro del contenedor de texto */
+.contenedor-texto .informe {
+    font-weight: bold; /* Grosor de la fuente en negrita */
+    color: #c99806; /* Color del texto */
+    font-style: normal; /* Estilo de fuente normal */
+}
+
+/* Estilos para párrafos dentro del contenedor de texto */
+.contenedor-texto p {
+    margin-bottom: 40px; /* Margen inferior del párrafo */
+    line-height: 36px; /* Altura de línea del párrafo */
+}
+
+/* price */
+
+.price{
+    text-align: center;
+}
+
+.price__table{
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.price__element{
+    background-color: #e5e5f7;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #696871;
+}
+
+.price__element--best{
+    --color-plan: #696871;
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #696871;
+}
+
+.price__name{
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.price__price{
+    font-size: 2.5rem;
+    color: var(--color-price);
+}
+
+.price__items{
+    margin-top: 35px;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+}
+
+.price__cta{
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    box-shadow: 0 0 1px rgb(0, 0, 0,.5);
+}
+
+
+
+/* Estilos para pantallas de tamaño pequeño */
+@media screen and (max-width: 768px) {
+  /* Ajusta el tamaño del título principal */
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  /* Ajusta el tamaño del botón "Ver más" */
+  .cta {
+    padding: 10px 20px;
+  }
+  
+  /* Alinea el menú de navegación en pantalla pequeña */
+  .nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  /* Ajusta el tamaño de la fuente en la sección "Lo que brinda nuestra Institución" */
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  
+  /* Ajusta el tamaño de los íconos y sus títulos en la sección "Lo que brinda nuestra Institución" */
+  .about__icons {
+    width: 100%;
+  }
+  
+  .about__icon {
+    width: 30px;
+  }
+  
+  .about__title {
+    font-size: 1rem;
+  }
+  
+  /* Ajusta el tamaño de los elementos de precio en la sección "Obten información de nosotros" */
+  .price__element {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .price__price {
+    font-size: 2rem;
+  }
+  
+  .price__features {
+    font-size: 1rem;
+  }
+  
+  .price__cta {
+    padding: 10px 20px;
+  }
+}
+/* Ocultar la lista de navegación en pantallas pequeñas */
+#nav-links {
+    display: none;
+}
+
+/* Estilos para el botón de menú */
+.menu-button {
+    display: block;
+    cursor: pointer;
+    margin-left: auto; /* Esto alinea el botón a la derecha */
+}
+
+
+/* Media query para mostrar el botón de menú en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    #nav-links {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+
