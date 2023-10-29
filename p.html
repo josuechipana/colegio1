@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGUSTO B. LEGUÍA</title>
+    <link rel="shortcut icon" href="Img/120538398_3502390296486409_6569464690480051498_n.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/contactos.css">
+    <link rel="stylesheet" href="css/redes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <header class="hero">
+        <nav class="nav container">
+            <div>
+                <h2 class="nav__title">Institución Educativa</h2>
+            </div>
+            <button class="menu-button" href="p.html"  id="menu-button">Menú</button>
+            
+            <ul class="nav__link" id="nav-links">
+                <li>
+                    <a href="p.html" onmouseover="changeBackgroundColor(this, 'blue')"
+                        onmouseout="resetBackgroundColor(this)">Inicio</a>
+                </li>
+                <li>
+                    <a href="nosotros.html" onmouseover="changeBackgroundColor(this, 'green')"
+                        onmouseout="resetBackgroundColor(this)">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#" onmouseover="changeBackgroundColor(this, 'red')"
+                        onmouseout="resetBackgroundColor(this)">Contáctanos</a>
+                </li>
+                <li>
+                    <a href="#" onmouseover="changeBackgroundColor(this, 'purple')"
+                        onmouseout="resetBackgroundColor(this)">Blog</a>
+                </li>
+                <li>
+                    <a href="inscrision.html" onmouseover="changeBackgroundColor(this, 'blue')"
+                        onmouseout="resetBackgroundColor(this)">Inscripción</a>
+                </li>
+
+                <!-- Imagen utilizada como un ícono en el menú de navegación -->
+                <img src="./Img/close.svg" class="nav__close" alt="Inicio">
+            </ul>
+            <!-- ... -->
+            <div class="nav__menu">
+                <img src="./Img/menu.svg" alt="" class="nav__img" id="menu-toggle">
+            </div>
+            <!-- ... -->
+
+        </nav>
+        <!-- Contenedor de texto genérico (fuera de la sección del héroe) -->
+        <div class="contenedor-texto">
+            <!-- Sección del héroe con un contenedor -->
+            <section class="hero__container container">
+                <!-- Título principal del héroe -->
+                <h1 class="hero__title">I.E. Agusto B. Leguía</h1>
+                <!-- Párrafo de bienvenida y título secundario -->
+                <p class="titulo">¡Hola y Bienvenidos a todos! <br><span class="typed"></span></p>
+                <!-- Enlace para ver más información -->
+                <a href="#" class="cta">Ver más</a>
+            </section>
+
+        </div>
+
+        <!-- Forma #1 -->
+
+    </header>
+
+    <main>
+        
+        <section class="container about">
+            <h2 class="subtitle">Lo que brinda nuestra Institución</h2>
+            <p class="about__paragraph">En este colegio formamos a nuestros alumnos con buenos valores, dedicación y
+                esfuerzo.</p>
+
+            <div class="about__main">
+                <article class="about__icons">
+                    <img src="./Img/shapes.svg" class="about__icons">
+                    <h3 class="about__title">Clases</h3>
+                    <p class="about__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga autem in
+                        vel excepturi.
+                    </p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="./Img/paint.svg" class="about__icons">
+                    <h3 class="about__title">Animaciones</h3>
+                    <p class="about__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga autem in
+                        vel excepturi.
+                    </p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="./Img/code.svg" class="about__icons">
+                    <h3 class="about__title">Sass</h3>
+                    <p class="about__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga autem in
+                        vel excepturi.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <!-------------------------------------------------- Galeria ------------------------------------------------->
+        <!-- Sección de la galería de imágenes y lightbox -->
+        <section class="knowledge">
+            <div class="knowledge__container container">
+                <div class="knowledge__texts">
+                    <h3 class="subtitle">Galeria</h3>
+                    <p class="knowledge__paragraph">Imágenes de la I.E. Agusto B. Leguía, Nuevo Imperial, Cañete</p>
+                </div>
+            </div>
+
+            <!-- Galería de imágenes -->
+            <div class="gallery">
+                <div class="gallery__item">
+                    <img src="Img/1.jpg" class="gallery__img" alt="Imagen 1">
+                </div>
+                <div class="gallery__item">
+                    <img src="Img/2.jpg" class="gallery__img" alt="Imagen 2">
+                </div>
+                <div class="gallery__item">
+                    <img src="Img/4.JPG" class="gallery__img" alt="Imagen 3">
+                </div>
+            </div>
+
+            <!-- Contenedor principal del lightbox -->
+            <div id="contenedor-principal">
+                <div id="contenedor-interno">
+                    <!-- Botones del lightbox -->
+                    <button id="btn-cierra" class="lightbox-button">Cerrar</button>
+                    <button id="btn-retrocede" class="lightbox-button">Anterior</button>
+                    <button id="btn-adelanta" class="lightbox-button">Siguiente</button>
+                </div>
+            </div>
+        </section>
+        <!-- --------------------------------------------------------- -->
+        <section class="price container">
+            <h2 class="subtitle">Obten información de nosotros</h2>
+
+            <div class="price__table">
+                <div class="price__element">
+                    <p class="price">Processo</p>
+                    <h3 class="price__price">Processo</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Processo</p>
+                        <p class="price__features">Processo</p>
+                        <p class="price__features">Processo</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Processo</a>
+                </div>
+
+
+                <div class="price__element price__element--best">
+                    <p class="price">Gride</p>
+                    <h3 class="price__price">Processo</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Processo</p>
+                        <p class="price__features">Processo Processo</p>
+                        <p class="price__features">Processo</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Processo</a>
+                </div>
+
+                <div class="price__element">
+                    <p class="price__name">Processo</p>
+                    <h3 class="price__price">Processo</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Processon</p>
+                        <p class="price__features">Processo</p>
+                        <p class="price__features">Processo</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Processo</a>
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="announcement">
+                <h2>¡Consulta nuestro Calendario de Fechas Cívicas!</h2>
+                <p>Descubre las fechas importantes de nuestra historia y cultura.</p>
+                <a href="calendario.html" class="btn">Ver Calendario</a>
+            </div>
+            
+
+            <!-- ----------------------Contacto------------------- -->
+
+            <div class="container">
+                <div class="row">
+                    <h1>Contactenos</h1>
+                </div>
+                <div class="row">
+                    <h4 style="text-align:center">¡Nos encantaría saber de usted!</h4>
+                </div>
+                <div class="row input-container">
+                    <form onsubmit="return validateForm();">
+                        <div class="col-xs-12">
+                            <div class="styled-input wide">
+                                <input type="text" name="name" required />
+                                <label>Nombre y Apellido</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="styled-input">
+                                <input type="text" name="email" required />
+                                <label>Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="styled-input" style="float:right;">
+                                <input type="text" name="phone" required />
+                                <label>Número Telefónico</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="styled-input wide">
+                                <textarea name="message" required></textarea>
+                                <label>Mensaje</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <button class="btn-lrg submit-btn" type="submit">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <h2>Redes sociales</h2>
+
+            <div class="redes">
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+
+        </section>
+    </main>
+    <script src="js/galeria.js"></script>
+    <script src="js/boton.js"></script>
+    <script src="js/escribir.js"></script>
+    <script src="js/contactanos.js"></script>
+    <script src="js/scrit.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+</body>
+
+</html>
